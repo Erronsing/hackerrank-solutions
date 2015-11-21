@@ -1,22 +1,28 @@
-# Enter your code here. Read input from STDIN. Print output to STDOUT
-N, M = [int(x) for x in raw_input().split()]
-lst = []
-count = 0
-maxCount = 0
+#!/bin/python
 
-for i in range (0, N):
-    lst.append([int(x) for x in raw_input().split()][0])
-for i in range (0, N):
-    for j in range(i, N):
+import sys
+
+
+n,m = raw_input().strip().split(' ')
+n,m = [int(n),int(m)]
+topic = []
+topic_i = 0
+maxCount = 0
+for topic_i in xrange(n):
+   topic_t = str(raw_input().strip())
+   topic.append(topic_t)
+    
+for i in range (0, n):
+    for j in range (i+1, n):
         count = 0
-        temp = lst[i]+lst[j]
+        temp = int(topic[i])+int(topic[j])
         for digit in str(temp):
             if int(digit)>0:
                 count+=1
-        if count>maxCount:
-            maxCount = count
-            pairCount = 1
-        elif count==maxCount:
-            pairCount+=1
+            if count > maxCount:
+                maxCount = count
+                pairCount = 1
+            elif count == maxCount:
+                pairCount+=1
 print maxCount
 print pairCount
