@@ -5,6 +5,9 @@ def insertionSort(ar):
         if ar[i]>e:
             ar[i+1] = ar[i]
             print ' '.join(str(x) for x in ar)
+            if i == 0:
+            	ar[i] = e
+            	print ' '.join(str(x) for x in ar)
         else:
             ar[i+1] = e
             print ' '.join(str(x) for x in ar)
