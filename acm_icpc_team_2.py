@@ -9,8 +9,8 @@ n,m = [int(n),int(m)]
 topic = []
 topic_i = 0
 for topic_i in xrange(n):
-   topic_t = str(raw_input().strip())
-   topic_t = [int(ch) for ch in topic_t]
+   #topic_t = str(raw_input().strip())
+   topic_t = [int(ch) for ch in list(raw_input().strip())]
    topic.append(topic_t)
 
 maxCount = 0
